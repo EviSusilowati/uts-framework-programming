@@ -9,7 +9,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $table = 'projects';
+    protected $table = 'table_projects';
     public $timestamps = true;
 
 
