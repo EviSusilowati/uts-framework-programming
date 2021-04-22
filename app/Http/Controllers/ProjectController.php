@@ -15,7 +15,7 @@ class ProjectController extends Controller
     {
         $projects = Project::latest()->paginate(5);
 
-        return view('projects.index', compact('table_projects'))
+        return view('projects.index', compact('projects'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -58,7 +58,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('projects.show', compact('table_projects'));
+        return view('projects.show', compact('project'));
     }
 
     /**
@@ -69,7 +69,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit', compact('table_projects'));
+        return view('projects.edit', compact('project'));
     }
     /**
      * Update the specified resource in storage.
